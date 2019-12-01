@@ -65,23 +65,24 @@ class chart(object):
     def save(self, name):
         self.fig.savefig(name)
     
+    #标记
     def marker(self, type="s", size=10, color="blue"):
         plt.marker(type)
         plt.markersize(size)
         plt.markerfacecolor(color)
     
     #条形图
-    def bar(self, x, y, width):
+    def bar(self, x, y, width, color="red"):
         if self.index <= self.num:
             plt.subplot(self.line, self.row, self.index)
-            plt.bar(x, y, width)
+            plt.bar(x, y, width, color=color)
             self.index = self.index + 1
     
     #水平条形图
-    def barh(self, x, y, width):
+    def barh(self, x, y, width, color="red"):
         if self.index <= self.num:
             plt.subplot(self.line, self.row, self.index)
-            plt.barh(x, y, width)
+            plt.barh(x, y, width, color=color)
             self.index = self.index + 1
     
     #饼图
